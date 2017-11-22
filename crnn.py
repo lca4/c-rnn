@@ -215,33 +215,33 @@ def main(args):
 
 
 def _parse_args():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser() ## ? file name?
     parser.add_argument("train_path", help="path to training data")
     parser.add_argument("valid_path", help="path to validation data")
     parser.add_argument("--batch-size", type=int, default=5,
                         help="number of sequences processed in parallel")
     parser.add_argument("--chunk-size", type=int, default=64,
-                        help="number of unrolled steps in BPTT")
+                        help="number of unrolled steps in BPTT")           ##??  like nlm?
     parser.add_argument("--hidden-size", type=int, default=128,
                         help="number of hidden units in the RNN cell")
     parser.add_argument("--learning-rate", type=float, default=0.01,
                         help="RMSprop learning rate")
     parser.add_argument("--max-train-chunks", type=int, default=None,
-                        help="max number of chunks per user for training")
+                        help="max number of chunks per user for training")   ## default None when knight, direct it?
     parser.add_argument("--max-valid-chunks", type=int, default=None,
-                        help="max number of chunks per user for validation")
+                        help="max number of chunks per user for validation") ## ""
     parser.add_argument("--num-epochs", type=int, default=10,
                         help="number of epochs to run")
     parser.add_argument("--rho", type=float, default=0.9,
-                        help="RMSprop decay coefficient")
+                        help="RMSprop decay coefficient")  ## update parameter
     parser.add_argument("--verbose", action="store_true", default=False,
-                        help="enable display of debugging messages")
-    return parser.parse_args()
+                        help="enable display of debugging messages")  ##  display settting !!!
+    return parser.parse_args()  ## args return
 
 
 if __name__ == "__main__":
     args = _parse_args()
-    if args.verbose:
+    if args.verbose:                    ## lach of arg ???
         print("arguments:")
         for key, val in vars(args).iteritems():
             print("{: <18} {}".format(key, val))
