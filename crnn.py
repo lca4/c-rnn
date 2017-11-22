@@ -1,15 +1,15 @@
-from __future__ import division
-from __future__ import print_function
+from __future__ import division        ## for ver2  even with 3 coding
+from __future__ import print_function  ## ""
 
-import argparse
-import itertools
+import argparse              ## get argument
+import itertools             ## 
 import numpy as np
 import tensorflow as tf
 import time
 
 from math import sqrt
-from cell import CollaborativeGRUCell
-from reader import Dataset
+from cell import CollaborativeGRUCell     ##hand made class py and its def?
+from reader import Dataset                ## ""
 
 
 class CollaborativeRNN(object):
